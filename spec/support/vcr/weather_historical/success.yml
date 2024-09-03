@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dataservice.accuweather.com/currentconditions/v1/28580/historical/24?apikey=Ownj7JkLZ95awyaA0GeMfA4t1g0lQbMe&details=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - dataservice.accuweather.com
+  response:
+    status:
+      code: 503
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 02 Sep 2024 17:26:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '200'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"Code":"ServiceUnavailable","Message":"The allowed number of requests
+        has been exceeded.","Reference":"/currentconditions/v1/28580/historical/24?apikey=Ownj7JkLZ95awyaA0GeMfA4t1g0lQbMe&details=true"}'
+  recorded_at: Mon, 02 Sep 2024 17:26:03 GMT
+recorded_with: VCR 6.3.1

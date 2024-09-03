@@ -1,0 +1,149 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/weather/current":
+    get:
+      summary: Get current temperature
+      tags:
+      - Weather
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  temperature_celsius:
+                    type: number
+                required:
+                - temperature_celsius
+  "/api/v1/weather/historical":
+    get:
+      summary: Get hourly temperatures for the last 24 hours
+      tags:
+      - Weather
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hourly_temperatures:
+                    type: array
+                    items:
+                      type: number
+                required:
+                - hourly_temperatures
+  "/api/v1/weather/historical_max":
+    get:
+      summary: Get maximum temperature for the last 24 hours
+      tags:
+      - Weather
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  max_temperature_celsius:
+                    type: number
+                required:
+                - max_temperature_celsius
+  "/api/v1/weather/historical_min":
+    get:
+      summary: Get minimum temperature for the last 24 hours
+      tags:
+      - Weather
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  min_temperature_celsius:
+                    type: number
+                required:
+                - min_temperature_celsius
+  "/api/v1/weather/historical_avg":
+    get:
+      summary: Get average temperature for the last 24 hours
+      tags:
+      - Weather
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  avg_temperature_celsius:
+                    type: number
+                required:
+                - avg_temperature_celsius
+  "/api/v1/weather/by_time":
+    get:
+      summary: Get temperature closest to the given timestamp
+      tags:
+      - Weather
+      parameters:
+      - name: timestamp
+        in: query
+        description: Unix timestamp
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  temperature_celsius:
+                    type: number
+                required:
+                - temperature_celsius
+        '404':
+          description: temperature not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+  "/api/v1/health":
+    get:
+      summary: Get backend status
+      tags:
+      - Health
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                required:
+                - status
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

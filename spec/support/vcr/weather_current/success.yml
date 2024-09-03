@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dataservice.accuweather.com/currentconditions/v1/28580?apikey=Ownj7JkLZ95awyaA0GeMfA4t1g0lQbMe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - dataservice.accuweather.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Sep 2024 13:29:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '489'
+      Connection:
+      - keep-alive
+      Request-Context:
+      - appId=cid-v1:0158d69b-75d9-4a19-9e5f-a14693f847e4
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '8'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Max-Age:
+      - '3628800'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=562
+      Expires:
+      - Mon, 02 Sep 2024 13:39:19 GMT
+      Akamai-Grn:
+      - 0.3e962e17.1725283797.3983002
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - deflate;q=0.6
+      - gzip;q=1.0
+      - identity;q=0.3
+      Host:
+      - api.accuweather.com
+      User-Agent:
+      - Ruby
+      X-Forwarded-For:
+      - 178.127.121.67
+      X-Forwarded-Port:
+      - '80'
+      X-Forwarded-Proto:
+      - http
+    body:
+      encoding: UTF-8
+      string: '[{"LocalObservationDateTime":"2024-09-02T16:17:00+03:00","EpochTime":1725283020,"WeatherText":"Mostly
+        sunny","WeatherIcon":2,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.5,"Unit":"C","UnitType":17},"Imperial":{"Value":82.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/by/minsk/28580/current-weather/28580?lang=en-us","Link":"http://www.accuweather.com/en/by/minsk/28580/current-weather/28580?lang=en-us"}]'
+  recorded_at: Mon, 02 Sep 2024 13:29:57 GMT
+recorded_with: VCR 6.3.1
